@@ -1,4 +1,4 @@
-import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Link, Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Test from "@components/Test";
 import { MyLoader } from "./loader/test.loader";
@@ -19,7 +19,11 @@ const routers = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <div>default element</div>,
+        element: (
+          <div>
+            <Link to="test">move to TEST PAGE</Link>
+          </div>
+        ),
       },
       {
         path: "test",
