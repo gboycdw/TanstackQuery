@@ -18,18 +18,18 @@ testRouter.get("/:oid", async (req, res) => {
     const query = req.query
     
     if(query.name){
-    function returnData(oid, query) {
-        if(query.name === "1") return "현재 쿼리는 1임"
-        return "현재 쿼리는 아마도 2임"
+        function returnData(oid, query) {
+        if(query.name === "1") return "query is 1"
+        return "query is maybe 2"
     }
-    const data = returnData(oid,query)
-        res.send(`oid는 ${oid}이고 ${data}`)
+        const data = returnData(oid,query)
+        res.send(`oid is ${oid}, ${data}`)
     }
     else {
-        res.send(`oid는 ${oid}이고 query는 없음.`)
+        res.send(`oid is ${oid}, there is no query.`)
     }}
     catch {
-        res.status(402).send("뭔가 에러임")
+        res.status(402).send("something wrong")
     }
 })
 
